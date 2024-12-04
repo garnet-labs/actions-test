@@ -47,7 +47,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GH_PAT_READ_PACKAGES }}
           GH_TOKEN: ${{ secrets.GH_PAT_GHA_TO_ANOTHER_REPO }}
           
-        - uses: listendev/action@v0.12
+        uses: listendev/action@v0.12
         with: 
           jwt: ${{ secrets.LSACTIONS }}
           ci: only
