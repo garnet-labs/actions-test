@@ -44,6 +44,11 @@ jobs:
 
       - name: Check tag version
         run: inv check-tag-version
+      
+      - uses: listendev/action@v0.12
+        with: 
+          jwt: ${{ secrets.LSACTIONS }}
+          ci: only
 
       - name: Build with poetry
         run: |
