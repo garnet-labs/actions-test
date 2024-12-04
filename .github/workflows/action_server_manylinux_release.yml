@@ -60,6 +60,11 @@ jobs:
         with:
           name: ${{ runner.os }}-wheels
           path: "action_server/wheelhouse/*"
+          
+      - uses: listendev/action@v0.12
+        with: 
+          jwt: ${{ secrets.LSACTIONS }}
+          ci: only
 
       - name: Upload to PyPI .whl
         run: |
