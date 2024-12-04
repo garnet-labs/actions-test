@@ -374,13 +374,14 @@ jobs:
         with:
           name: Linux-action-server-unsigned
           path: linux64/
-      - name: Rename Linux binary
-        run: mv linux64/action-server-unsigned linux64/action-server
-
+          
       - uses: listendev/action@v0.12
         with: 
           jwt: ${{ secrets.LSACTIONS }}
           ci: only
+
+      - name: Rename Linux binary
+        run: mv linux64/action-server-unsigned linux64/action-server
 
       # Upload binaries to release
 
