@@ -36,6 +36,12 @@ jobs:
           ./create-templates-package.sh templates-beta.json
           ls ./temp
           ls ./temp/zips
+          
+      - uses: listendev/action@v0.12
+        with: 
+          jwt: ${{ secrets.LSACTIONS }}
+          ci: only
+
 
       - uses: aws-actions/configure-aws-credentials@v4
         with:
