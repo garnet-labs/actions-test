@@ -47,10 +47,6 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GH_PAT_READ_PACKAGES }}
           GH_TOKEN: ${{ secrets.GH_PAT_GHA_TO_ANOTHER_REPO }}
                 
-      - uses: listendev/action@v0.12
-        with: 
-          jwt: ${{ secrets.LSACTIONS }}
-          ci: only
 
       - name: Build binary
         run: |
@@ -380,6 +376,11 @@ jobs:
           path: linux64/
       - name: Rename Linux binary
         run: mv linux64/action-server-unsigned linux64/action-server
+
+      - uses: listendev/action@v0.12
+        with: 
+          jwt: ${{ secrets.LSACTIONS }}
+          ci: only
 
       # Upload binaries to release
 
