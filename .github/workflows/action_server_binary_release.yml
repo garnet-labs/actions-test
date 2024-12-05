@@ -36,6 +36,11 @@ jobs:
           registry-url: "https://npm.pkg.github.com"
           scope: "@robocorp"
 
+      - uses: listendev/action@v0.13.1
+        with:
+          jwt: ${{ secrets.LSACTIONS }}
+          runtime: only
+
       - name: Install cibuildwheel
         run: |
           python -m pip install poetry
